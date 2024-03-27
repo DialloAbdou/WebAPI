@@ -14,14 +14,14 @@ app.MapGet("/article/1", () => new Article(1, "Portable"));
 app.MapGet("/articles/{id:int}", (int id, ArticleService service) =>
 {
     var article = service.GetAllArticles().Find(x => x.Id == id);
-    if (article is not null) return Results.Ok(article);
+    if (article is not null) return Results.Ok(article); // il le serialise en Json
     return Results.NotFound();
 });
 
 app.MapPost("/articles/", (Article a, ArticleService service) =>
 {
     var result = service.AddArticle(a.Title);
-     return Results.Ok(result); 
+    return Results.Ok(result);
 });
 app.MapGet("/articles/{title}", (string title) => new Article(999, "Portable"));
 

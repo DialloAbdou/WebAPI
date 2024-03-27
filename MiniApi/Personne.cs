@@ -17,27 +17,27 @@ namespace MiniApi
         /// <param name="value"></param>
         /// <param name="personne"></param>
         /// <returns></returns>
-        public static bool TryParse(string value, out Personne? personne)
-        {
+        //public static bool TryParse(string value, out Personne? personne)
+        //{
 
-            try
-            {
-                var data = value.Split(' ');
-                personne = new Personne
-                {
-                    Nom = data[0],
-                    Prenom = data[1]
-                };
+        //    try
+        //    {
+        //        var data = value.Split(' ');
+        //        personne = new Personne
+        //        {
+        //            Nom = data[0],
+        //            Prenom = data[1]
+        //        };
 
-                return true;
-            }
-            catch (Exception)
-            {
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                personne = null;
-                return false;
-            }
-        }
+        //        personne = null;
+        //        return false;
+        //    }
+        //}
 
         /// <summary>
         /// With POST
